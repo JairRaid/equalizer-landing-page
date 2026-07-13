@@ -28,8 +28,8 @@ Your users should be able to:
 
 ### Links
 
-- Solution URL:
-- Live Site URL:
+- Solution URL: https://github.com/JairRaid/equalizer-landing-page
+- Live Site URL: https://jairraid.github.io/equalizer-landing-page/
 
 ## My process
 
