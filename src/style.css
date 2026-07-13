@@ -1,0 +1,190 @@
+@import "tailwindcss";
+
+@theme {
+  /* Colors */
+  --color-white: hsl(0 100% 100%);
+  --color-slate: hsl(244 23% 12%);
+  --color-cyan: hsl(177 68% 64%);
+  --color-orange: hsl(12 94% 65%);
+  --color-yellow: hsl(33 100% 70%);
+
+  /* Typography */
+  --font-base: "IBM Plex Sans", sans-serif;
+
+  --text-100: 1rem;
+  --text-200: 1.125rem;
+  --text-300: 1.25rem;
+  --text-400: 2.5rem;
+  --text-500: 4rem;
+  --text-600: 5.5rem;
+
+  --leading-100: 1;
+  --leading-110: 1.1;
+  --leading-150: 1.5;
+  --leading-180: 1.8;
+
+  --tracking-0: 0rem;
+  --tracking-1: 0.0625rem;
+
+  /* Spacing */
+  --spacing-0: 0;
+  --spacing-100: 0.5rem;
+  --spacing-200: 1rem;
+  --spacing-250: 1.25rem;
+  --spacing-300: 1.5rem;
+  --spacing-400: 2rem;
+  --spacing-500: 2.5rem;
+  --spacing-600: 3rem;
+  --spacing-700: 3.5rem;
+  --spacing-800: 4rem;
+  --spacing-1000: 5rem;
+  --spacing-1600: 8rem;
+  --spacing-2500: 12.5rem;
+
+  /* Breakpoints */
+  --breakpoint-md: 48rem;
+  --breakpoint-lg: 64rem;
+
+  --radius-12: 0.75rem;
+  --radius-16: 1rem;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+
+  body {
+    @apply font-base text-slate;
+    @apply bg-[url("assets/images/bg-sm.png")] bg-top-right bg-no-repeat;
+    @apply md:bg-[url("assets/images/bg-md.svg")] md:bg-cover;
+    @apply lg:bg-[url("assets/images/bg-lg.svg")] lg:bg-cover;
+  }
+
+  .page-shell {
+    @apply min-h-screen w-full max-w-[1280px] mx-auto;
+  }
+
+  .download-button {
+    @apply font-bold text-200 leading-150;
+    @apply inline-flex justify-center items-center w-full h-800 gap-x-100 rounded-12;
+  }
+
+  .hero {
+    @apply mx-250 mt-800 mb-800 md:mx-500 lg:mx-1000;
+
+    .hero__title {
+      @apply font-bold text-400 leading-100 -tracking-1 max-w-[300px] md:text-500 md:max-w-[420px] lg:max-w-[930px] lg:text-600;
+    }
+
+    .hero__description {
+      @apply mt-500 md:text-200 lg:text-300 max-w-[510px] lg:max-w-[736px];
+    }
+  }
+
+  .premium {
+    @apply pt-[7.0625rem] md:pb-[7.0625rem] md:relative md:mx-500 lg:mx-1000 lg:pt-[7.5rem] lg:pb-[7rem];
+
+    .premium__illustration {
+      /* Background image illustration */
+      @apply relative bg-slate h-[380px] md:h-[600px] md:rounded-12;
+
+      @apply bg-[url("assets/images/illustration.png")] bg-top bg-no-repeat md:bg-top-left lg:bg-[position:45%_0];
+    }
+
+    .phone-illustration {
+      @apply absolute left-1/2 bottom-800 -translate-x-1/2;
+
+      @apply md:bottom-[158px] md:-translate-x-full lg:w-[312px] lg:translate-x-[calc(-100%-9.375rem)] lg:bottom-1000;
+    }
+
+    .card {
+      @apply md:absolute md:top-[198px] md:left-1/2 md:translate-x-[-3.75rem]  md:w-[356px] lg:w-[512px];
+    }
+  }
+}
+
+@layer components {
+  /* Header component */
+  .header {
+    @apply mx-250 mt-800 md:mx-500 lg:mx-1000;
+  }
+
+  /* Card component */
+  .card {
+    @apply bg-orange  px-250 py-600 pb-[6.9375rem] md:rounded-16 md:px-600 md:pb-600 lg:max-w-[512px] lg:p-700;
+
+    .card__title {
+      @apply font-bold text-400 leading-110;
+    }
+
+    .card__description {
+      @apply font-normal text-100 leading-150 pt-300 md:text-200 lg:text-300;
+    }
+
+    .card__price {
+      @apply flex items-center gap-x-200 pt-500;
+    }
+
+    .card__price-amount {
+      @apply font-bold text-500 leading-110;
+    }
+
+    .card__price-period {
+      @apply font-normal text-300 leading-150;
+    }
+
+    .card__buttons {
+      @apply flex flex-col gap-y-200 pt-600;
+    }
+  }
+
+  /* Footer component */
+  .footer {
+    @apply mx-250 my-1000 md:mx-500 md:my-800 lg:mx-1000;
+
+    .footer__container {
+      @apply flex flex-col gap-y-400 lg:flex-row lg:gap-x-1600;
+    }
+
+    .footer__text {
+      @apply font-normal text-100 leading-150;
+    }
+
+    .logo {
+      @apply self-start;
+    }
+
+    .footer__link {
+      @apply font-bold;
+    }
+
+    .footer__content {
+      @apply flex flex-col gap-y-400 md:flex-row md:justify-between md:items-center lg:grow-1;
+    }
+
+    .footer__navigation {
+      @apply flex gap-x-400;
+    }
+
+    .icon {
+      @apply transition-colors transition-transform duration-200 ease-in-out;
+      @apply hover:text-orange hover:translate-y-[-0.125rem];
+      @apply focus-visible:text-orange focus-visible:translate-y-[-0.125rem];
+    }
+  }
+}
+
+@layer utilities {
+  .button-dark {
+    @apply bg-slate text-white transition-colors transition-transform duration-200 ease-in-out;
+    @apply hover:bg-cyan hover:text-slate hover:translate-y-[-0.125rem];
+    @apply focus-visible:bg-cyan focus-visible:text-slate focus-visible:translate-y-[-0.125rem];
+  }
+
+  .button-light {
+    @apply bg-white text-slate transition-colors transition-transform duration-200 ease-in-out;
+    @apply hover:bg-yellow hover:translate-y-[-0.125rem];
+    @apply focus-visible:bg-yellow focus-visible:translate-y-[-0.125rem];
+  }
+}
