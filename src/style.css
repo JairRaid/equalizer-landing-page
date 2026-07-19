@@ -168,23 +168,26 @@
     }
 
     .icon {
-      @apply transition-colors transition-transform duration-200 ease-in-out;
+      @apply transition duration-200 ease-in-out;
       @apply hover:text-orange hover:translate-y-[-0.125rem];
       @apply focus-visible:text-orange focus-visible:translate-y-[-0.125rem];
+      @apply active:text-orange active:translate-y-[-0.125rem];
     }
   }
 }
 
 @layer utilities {
   .button-dark {
-    @apply bg-slate text-white transition-colors transition-transform duration-200 ease-in-out;
+    @apply bg-slate text-white transition duration-200 ease-in-out;
     @apply hover:bg-cyan hover:text-slate hover:translate-y-[-0.125rem];
     @apply focus-visible:bg-cyan focus-visible:text-slate focus-visible:translate-y-[-0.125rem];
+    @apply active:bg-cyan active:text-slate active:translate-y-[-0.125rem];
   }
 
   .button-light {
-    @apply bg-white text-slate transition-colors transition-transform duration-200 ease-in-out;
+    @apply bg-white text-slate transition duration-200 ease-in-out;
     @apply hover:bg-yellow hover:translate-y-[-0.125rem];
     @apply focus-visible:bg-yellow focus-visible:translate-y-[-0.125rem];
+    @apply active:bg-yellow active:translate-y-[-0.125rem];
   }
 }
